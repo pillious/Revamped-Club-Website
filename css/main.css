@@ -13,7 +13,7 @@ Custom styles written in order they appear in the index.html
 }
 
 .flip-card:hover .flip-card-inner,
-.flip-card.hover .flip-card-inner {
+.flip-card:hover .flip-card-inner {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
@@ -44,7 +44,7 @@ Custom styles written in order they appear in the index.html
 }
 
 .flip-card-inner-front {
-  background: url(https://images.pexels.com/photos/179124/pexels-photo-179124.jpeg?w=940&h=650&auto=compress&cs=tinysrg) 0 0 no-repeat;
+  /*background: url(https://images.pexels.com/photos/179124/pexels-photo-179124.jpeg?w=940&h=650&auto=compress&cs=tinysrg) 0 0 no-repeat;*/
   z-index: 2;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -384,20 +384,42 @@ body:before{
     margin-top: 20px;
 }
 
-.flip-card-front-location {
-    background-image: url(../img/locationImg.png);
+#specificjoin {
+  font-weight: 900;
+  font-size: 30px;
 }
 
-.flip-card-front-support {
-    background-image: url(../img/supportImg.jpg);
+#specificlocation {
+  font-weight: 900;
+  font-size: 30px;
+}
+#specificproject {
+  font-weight: 900;
+  font-size: 30px;
+}
+
+#specificsupport {
+  font-weight: 900;
+  font-size: 30px;
 }
 
 .flip-card-front-join {
-    background-image: url(../img/joinImg.jpg);
+    background-image: url(https://i.ibb.co/YBybNgv/joinImg.jpg);
+    background-position: center;
+}
+
+.flip-card-front-location {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiaP2Pe5yc_l-aHMi56fbFOW2IegnVY3RZLHPwXKTQjR1KCQWb);
+    background-position: center;
 }
 
 .flip-card-front-project {
-    background-image: url(../img/macWithCodingImg.jpg);
+    background-image: url(https://i.ibb.co/NZw7hCx/mac-With-Coding-Img.jpg);
+    background-position: center;
+}
+.flip-card-front-support {
+    background-image: url(https://i.ibb.co/tXj8w1V/support-Img.jpg);
+    background-position: center;
 }
 
 .flip-card-front-content {
