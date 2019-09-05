@@ -4,99 +4,6 @@ Custom styles written in order they appear in the index.html
 
 
 */
-
-.flip-card {
-  -webkit-perspective: 1000;
-          perspective: 1000;
-  border: 0;
-  background: transparent;
-}
-
-.flip-card:hover .flip-card-inner,
-.flip-card:hover .flip-card-inner {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-
-.flip-card,
-.flip-card-inner-front,
-.flip-card-inner-back {
-  width: 100%;
-  height: 20rem;
-}
-
-.flip-card-inner {
-  transition: 0.6s;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  position: relative;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-
-.flip-card-inner-front,
-.flip-card-inner-back {
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.flip-card-inner-front {
-  /*background: url(https://images.pexels.com/photos/179124/pexels-photo-179124.jpeg?w=940&h=650&auto=compress&cs=tinysrg) 0 0 no-repeat;*/
-  z-index: 2;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.flip-card-inner-front span {
-  width: 100%;
-  text-align: center;
-  background: rgba(254, 254, 254, 0.8);
-  padding: 0.25rem 0;
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.flip-card-inner-back {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  text-align: center;
-  background: ghostwhite;
-  padding: 1rem;
-}
-
-.flip-card-inner-back-title {
-  font-weight: bold;
-}
-
-.flip-card-inner-back-text {
-  line-height: 1.3;
-}
-
-
-
-
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
@@ -114,11 +21,11 @@ body {
 }
 
 .nav-link {
-    animation: NavbarElementsMoveInFromRight 1s;
+    animation: NavbarElementsMoveInFromRight 1s ease-out;
 }
 
 .navbar-header {
-    animation: NavbarHeaderMoveInFromLeft 1s;
+    animation: NavbarHeaderMoveInFromLeft 1s ease-out;
 }
 
 .navbar-header {
@@ -154,6 +61,7 @@ body {
     top: 0;
     left: 10px;
     z-index: 1;
+    animation: NavbarHeaderMoveInFromLeft 1s ease-out;
 }
 
 .logo-content-container {
@@ -165,25 +73,34 @@ body {
 .logo-link {
     text-decoration: none;
     color: #ec9b3b;
+    cursor: pointer;
 }
 
-.logo-link:hover {
+.logo-link:hover,
+.logo-link:visited,
+.logo-link:link,
+.logo-link:active {
     text-decoration: none;
     color: #ec9b3b;
 }
 
-.logo-img {
-    margin-top: 0px;
-    height: 250px;
-    animation: logoMoveDownFromTop 2s;
-    
+.logo-img-corner {
+    height: 75px;
 }
 
 .logo-caption {
     position: sticky;
     font-weight: 700;
-    animation: fadeIn 3s;
 }
+
+.logo-img {
+    margin-top: 0px;
+    height: 250px;
+    animation: logoMoveDownFromTop 2s ease-out;
+
+}
+
+
 
 .text-box {
     position: absolute;
@@ -217,87 +134,56 @@ body {
     animation: moveInFromRight 2s ease-out;
 }
 
-/*
-html,body{
-  height:100%;
-}
-body{
-  text-align:center;
-}
-body:before{
-  content:'';
-  height:100%;
-  display:inline-block;
-  vertical-align:middle;
-}*/
-.learn-more{
-    margin-top: 10px;
-  font-weight: 700;
-  background:#ec9b3b;
-  color:white;
-  border:none;
-  position:relative;
-  height:60px;
-  font-size:30px;
-  padding:0 1em;
-  cursor:pointer;
-  transition:800ms ease all;
-  outline:none;
-  animation: fadeIn 3s;
-}
-.learn-more:hover{
-  background:white;
-  color:#ec9b3b;
-}
-.learn-more:before,.learn-more:after{
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:4px;
-  width:0;
-  background: #ec9b3b;
-  transition:400ms ease all;
-}
-.learn-more:after{
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
-}
-.learn-more:hover:before,.learn-more:hover:after{
-  width:100%;
-  transition:800ms ease all;
-}
-
-/*
 .learn-more {
+    margin-top: 10px;
     font-weight: 700;
-    color: #005eff;
-    background: none;
+    background: #ec9b3b;
+    color: white;
     border: none;
-    font-size: 25px;
-    text-decoration: none;
-    animation: fadeIn 3s;
-
+    position: relative;
+    height: 60px;
+    font-size: 30px;
+    padding: 0 1em;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+    animation: fadeIn 3s ease-out;
 }
 
 .learn-more:hover {
-    font-weight: 700;
-    color: ##005eff;
-    background: none;
-    border: none;
-    font-size: 25px;
-    text-decoration: underline;
+    background: white;
+    color: #ec9b3b;
+}
 
-}*/
+.learn-more:before,
+.learn-more:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 4px;
+    width: 0;
+    background: #ec9b3b;
+    transition: 400ms ease all;
+}
+
+.learn-more:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+.learn-more:hover:before,
+.learn-more:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}
 
 .mission {
     padding-top: 100px;
     text-align: center;
 }
-
-
 
 .section-header {
     text-align: center;
@@ -384,42 +270,31 @@ body:before{
     margin-top: 20px;
 }
 
-#specificjoin {
-  font-weight: 900;
-  font-size: 30px;
-}
-
-#specificlocation {
-  font-weight: 900;
-  font-size: 30px;
-}
-#specificproject {
-  font-weight: 900;
-  font-size: 30px;
-}
-
-#specificsupport {
-  font-weight: 900;
-  font-size: 30px;
+.flip-card-front-content {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .flip-card-front-join {
+    /* background-image: url(../img/joinImg.jpg); */
     background-image: url(https://i.ibb.co/YBybNgv/joinImg.jpg);
-    background-position: center;
 }
 
 .flip-card-front-location {
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiaP2Pe5yc_l-aHMi56fbFOW2IegnVY3RZLHPwXKTQjR1KCQWb);
-    background-position: center;
+    background-image: url(../img/locationImg.png);
+    /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiaP2Pe5yc_l-aHMi56fbFOW2IegnVY3RZLHPwXKTQjR1KCQWb); */
 }
 
 .flip-card-front-project {
+    /* background-image: url(../img/macWithCodingImg.jpg); */
     background-image: url(https://i.ibb.co/NZw7hCx/mac-With-Coding-Img.jpg);
-    background-position: center;
 }
+
 .flip-card-front-support {
+    /* background-image: url(../img/supportImg.jpg); */
     background-image: url(https://i.ibb.co/tXj8w1V/support-Img.jpg);
-    background-position: center;
 }
 
 .flip-card-front-content {
@@ -433,6 +308,17 @@ body:before{
 
 .flip-card-front-font-small {
     font-size: 1.5rem;
+}
+
+.flip-card-front .flip-card-title {
+    /* display: block; */
+    width: 100%;
+    text-align: center;
+    background: rgba(254, 254, 254, 0.8);
+    padding: 0.25rem 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+    transform: translateY(250%);
 }
 
 /* Style the back side */
@@ -480,10 +366,6 @@ body:before{
 .project-container {
     padding-bottom: 50px;
 }
-
-.project-header {}
-
-.project-caption {}
 
 .project-img {
     width: 25vw;
